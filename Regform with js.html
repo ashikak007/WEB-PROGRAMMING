@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>FORM</title>
+<head><h1 allign="Center">REGISTRATION FORM<u></u></h1><br><br>
+<body>
+<form name="form" onsubmit="validateForm()">
+<h3>NAME:<input type="text" name="name"><br><br>
+AGE:<select>
+    <option>select</option>
+    <option>10-20</option>
+    <option>20-30</option>
+    <option>30-40</option>
+    </select><br><br>
+    <input type="text" name="age">
+    
+MOBILE:<input type="tel" name="mobile"><br><br>
+
+PASSWORD:<input type="password" name="password"><br><br>
+
+ADDRESS:<input type="text" name="address"><br><br>
+
+Email:<input type="email" name="email"><br><br>
+
+LANGUAGE:<h5><input type="checkbox">MALAYALAM
+             <input type="checkbox">ENGLISH
+             <input type="checkbox">HINDI<h5><br><br>
+
+<h3>HOBBIES:</h3><h5>GAMING<input type="radio"name="XX">
+                 WRITING<input type="radio"name="YY"><h5><br><br>
+
+UPLOAD CV:<input type="file">Choose file</h3><br><br>
+
+<th colspan="2"> <input type="SUBMIT" value="SUBMIT"></th>
+<script>
+    function validateForm(){
+            var name=document.form.name.value;
+            var age=document.form.age.value;
+            var email=document.form.email.value;
+            var mobile=document.form.mobile.value;
+            var password=document.form.password.value;
+            var address=document.form.address.value;
+            
+            var a=/^(?=.\d)(?=.[!@#$%^&])(?=.[a-z])(?=.*[A-Z]).{8,}$/;
+            var b=/[0-9!@#$%^&*]/;
+            var c=/^(?=.\d)(?=.[a-z])(?=.[@])(?=.[gmail])(?=.[.])(?=.[com])/;
+
+
+            if(name==""){
+                alert("Enter name !");
+                document.form.name.focus();
+                return false;
+            }
+            else if(b.test(name)){
+                alert("Enter valid name !");
+                document.form.name.focus();
+                return false;
+            }
+            if(age==""){
+                alert("Select any age criteria !");
+                document.form.age.focus();
+                return false;
+            }
+            else if(d.test(age)){
+            alert("Select an age option !");
+            return false
+            }
+
+            if(email==""){
+                alert("Enter Email !");
+                document.form.email.focus();
+                return false;
+            }
+            else if(c.test(email)){
+                alert("Enter valid email !");
+                document.form.email.focus();
+                return false;
+            }
+            if(mobile==""){
+                alert("Enter mobile number");
+                return false;
+            }
+            else if(isNaN(mobile)){
+                alert("Enter valid mobile number");
+                return false;
+            }
+            else if(mobile.length!=10){
+                alert("Enter valid mobile number");
+                return false;
+            }
+            if(password==""){
+                alert("enter password !");
+                document.form.password.focus();
+                return false;
+            }
+            else if(password.length<8){
+                alert("Password must contain 8 digit");
+                return false;
+            }
+            else if(a.test(password)){
+                alert("pasword contains atleast one uppercase and one special characters");
+                return false;
+            }
+            if(address=""){
+                alert("Enter address with pincode !");
+                document.form.address,focus();
+                return false;
+            }
+            else if(e.test(address)){
+                 alert("Enter valid adress !");
+                 return false;
+            }
+</script>
+
+</body>
+</head>
+</html>

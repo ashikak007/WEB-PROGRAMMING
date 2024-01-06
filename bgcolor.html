@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+ <title>Background change</title>
+</head>
+<style>
+body {
+  background-color: #fefbd8;
+}
+
+h1 {
+  background-color: #80ced6;
+}
+
+div {
+  background-color: #d5f4e6;
+}
+
+span {
+  background-color: #f18973;
+}
+table{
+background-color: white;
+margin-left: auto;
+margin-right: auto;
+margin-top:1em;
+padding:1em;
+box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+tr,td,th{
+padding:1em;
+text-align: left;
+}
+.center th{
+text-align: center;
+}
+h2{
+text-align: center;
+margin-top: 2em;
+background-color:black;
+color: white;
+}>
+ .container{
+   width:100%;
+   height:100%;
+   text-align: center;
+   display: grid;
+}
+   #button{
+   margin:auto;
+   padding:1em;
+   border:3px solid black;
+   outline:none;
+}
+</style>
+<body>
+<center>
+ <div class="container">
+ <input id="button" type="button" value="Change bground">
+</div>
+<script>
+ document.getElementById("button").addEventListener("click", colorchange);
+ function colorchange() {
+ var color = '#' + Math.floor(Math.random() * 10000000).toString(16);
+ document.body.style.background = color;
+}
+</script>
+</center>
+</body>
+</html>

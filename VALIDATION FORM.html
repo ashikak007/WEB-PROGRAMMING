@@ -1,0 +1,141 @@
+<html>
+<head>
+ <title>FORM VALIDATION</title>
+ <link rel="stylesheet" href="styles.css" >
+</head>
+<style>
+body {
+  background-color: #fefbd8;
+}
+
+h1 {
+  background-color: #80ced6;
+}
+
+div {
+  background-color: #d5f4e6;
+}
+
+span {
+  background-color: #f18973;
+}
+table{
+background-color: white;
+margin-left: auto;
+margin-right: auto;
+margin-top:1em;
+padding:1em;
+box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+tr,td,th{
+padding:1em;
+text-align: left;
+}
+.center th{
+text-align: center;
+}
+h2{
+text-align: center;
+margin-top: 2em;
+background-color:black;
+color: white;
+}>
+</style>
+<h1><center>FORM VALIDATION</center></h1>
+<form name="form" onsubmit="validateForm()">
+        <table>
+            <tr>
+                <th>Name</th>
+                <td><input type="text" name="aname"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <th>Mobile no</th>
+              <td><input type="tel" name="mobile"></td>
+            </tr>
+            <tr>
+              <th>User Name</th>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td><input type="password" ></td>
+            </tr>
+            <tr>
+                <th colspan="2"><input type="SUBMIT" value="SUBMIT"></th>
+            </tr>
+        </table>
+</form>
+
+
+<script>
+    function validateForm(){
+            var aname=document.form.aname.value;
+            var email=document.form.email.value;
+            var mobile=document.form.mobile.value;
+          var username=document.form.username.value;
+          var password=document.form.password.value;
+          var a=/^(?=.\d)(?=.[!@#$%^&])(?=.[a-z])(?=.*[A-Z]).{8,}$/;
+            var b=/[0-9!@#$%^&*]/;
+            var c=/^(?=.\d)(?=.[a-z])(?=.[@])(?=.[gmail])(?=.[.])(?=.[com])/;
+
+
+            if(aname==""){
+                alert("Enter name !");
+                document.form.aname.focus();
+                return false;
+            }
+            else if(b.test(aname)){
+                alert("Enter valid name !");
+                document.form.aname.focus();
+                return false;
+            }
+            if(email==""){
+                alert("Enter Email !");
+                document.form.email.focus();
+                return false;
+            }
+            else if(c.test(email)){
+                alert("Enter valid email !");
+                document.form.email.focus();
+                return false;
+            }
+            if(mobile==""){
+                alert("Enter mobile number");
+                return false;
+            }
+            else if(isNaN(mobile)){
+                alert("Enter valid mobile number");
+                return false;
+            }
+            else if(mobile.length!=10){
+                alert("Enter valid mobile number");
+                return false;
+            }
+            if(username==""){
+                alert("Enter user name !");
+                document.form.username.focus();
+                return false;
+            }
+            if(password==""){
+                alert("enter password !");
+                document.form.password.focus();
+                return false;
+            }
+            else if(password.length<8){
+                alert("Password must contain 8 digit");
+                return false;
+            }
+            else if(a.test(password)){
+                alert("pasword contains atleast one uppercase and one special characters");
+                return false;
+            }
+
+    }
+</script>
+
+</body>
+</html>
